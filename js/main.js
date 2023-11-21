@@ -56,12 +56,15 @@ for (let i = 0; i < carouselInfo.length; i++) {
     items.append(item);
     
 }
+document.querySelector('.titolo').innerText = carouselInfo[currentItem].titolo;
+document.querySelector('.descrizione').innerText = carouselInfo[currentItem].descrizione;
 
 const domItem = document.querySelectorAll('.item');
 const thumbnail = document.querySelectorAll('.opacity');
 if (currentItem === 0) {
     thumbnail[currentItem].classList.remove('opacity');
 }
+
 
 // esecuzione in avanti
 
@@ -83,6 +86,8 @@ next.addEventListener('click', function(){
         currentItem = 0;
         domItem[currentItem].classList.add('active');
         thumbnail[currentItem].classList.remove('opacity');
+        document.querySelector('.titolo').innerText = carouselInfo[currentItem].titolo;
+        document.querySelector('.descrizione').innerText = carouselInfo[currentItem].descrizione;
         
     }
 
@@ -107,6 +112,8 @@ prev.addEventListener('click', function(){
         currentItem = 4;
         domItem[currentItem].classList.add('active');
         thumbnail[currentItem].classList.remove('opacity');
+        document.querySelector('.titolo').innerText = carouselInfo[currentItem].titolo;
+        document.querySelector('.descrizione').innerText = carouselInfo[currentItem].descrizione;
     }
     
 })
